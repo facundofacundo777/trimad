@@ -20,7 +20,10 @@ logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", level=loggin
 log = logging.getLogger("bot")
 
 G = Google(C.GOOGLE_CREDENTIALS_JSON, C.SHEET_ID, C.DRIVE_FOLDER_ID)
-IA = anthropic.Anthropic(api_key=C.ANTHROPIC_API_KEY)
+IA = anthropic.Anthropic(
+    api_key=C.ANTHROPIC_API_KEY,
+    default_headers={"anthropic-workspace-id": os.environ.get("ANTHROPIC_WORKSPACE_ID", "")}
+)
 
 OPS: dict[str, dict] = {}      # operaciones en curso / recientes, por id
 ESPERANDO: dict[tuple, dict] = {}   # (chat_id, user_id) -> {"op": id, "campo": nombre}
