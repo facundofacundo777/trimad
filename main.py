@@ -200,7 +200,8 @@ def escribir(op: dict) -> str:
         r = G.subir_archivo(nombre_arch, op["archivo"], op["mime"])
         link = r.get("webViewLink", "")
     except Exception as e:
-        import traceback log.warning("Drive error completo: %s", traceback.format_exc())
+        import traceback 
+        log.warning("Drive error completo: %s", traceback.format_exc())
 
     # 3) filas en Compras/Ventas (una por alicuota)
     ids = []
