@@ -6,7 +6,7 @@ import io
 import logging
 import uuid
 from datetime import datetime, timedelta
-
+import os
 import anthropic
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (ApplicationBuilder, CallbackQueryHandler, CommandHandler,
