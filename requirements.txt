@@ -1,0 +1,6 @@
+python-telegram-bot==21.6
+anthropic>=0.40
+google-auth>=2.30
+requests>=2.31
+opencv-python-headless>=4.9
+numpy>=1.26
